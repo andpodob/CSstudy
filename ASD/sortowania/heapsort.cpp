@@ -13,6 +13,8 @@ using namespace std;
 */
 void heapify(int*,int);
 void build_heap(int*);
+void heap_sort(int*);
+
 
 void build_heap(int *tab){
     for(int i = tab[0]; i >= 1; i--){
@@ -42,12 +44,25 @@ void heapify(int* tab, int i){
     }
 }
 
+void heap_sort(int* tab){
+    int temp, size = tab[0];
+    build_heap(tab);
+    for(int i = tab[0]; i >= 1; i--){
+        temp = tab[1];
+        tab[1] = tab[i];
+        tab[i] = temp;
+        tab[0]--;
+        heapify(tab, 1);
+    }
+    tab[0]=size;
+}
+
 
 int main(){
     int tab[] = {10,rand()%10,rand()%10,rand()%10,rand()%10,rand()%10,rand()%10,rand()%10,rand()%10,rand()%10,rand()%10};
     for(int a : tab) cout<<a<<" ";
     cout<<endl;
-    build_heap(tab);
+    heap_sort(tab);
     for(int a : tab) cout<<a<<" ";
     cout<<endl;
 }
