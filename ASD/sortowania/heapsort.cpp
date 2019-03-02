@@ -7,7 +7,7 @@
 using namespace std;
 
 /*
- In the folowing implementation od the heapsort i assumed convention with the size of heap at the 0-index,
+ In the folowing implementation of the heapsort i assumed convention with the size of heap at the 0-index,
  for example if heap has 3 elements, array will look like this:
     {3, el_1, el_2, el_3}
 */
