@@ -2,72 +2,55 @@
 
 using namespace std;
 
-// void swap(int &a, int &b){
+int merge(int*, int, int, int);
+int merge_sort(int*, int, int);
 
-// }
-
-void merge(int* tab, int p, int sr, int k){
-    
-    
-
-    int pocz = p; int kon = k;
+int merge(int* tab, int p, int sr, int k){
     int N = k-p+1;
-    int pomoc[k-p+1];
-    int m = sr+1;
-    int i = 0;
-    
-    while(p < sr && m <= k){
-        if(tab[p] < tab[m]){
-            pomoc[i]=tab[p];
-            p++;
-        }else{
-            pomoc[i] = tab[m];
-            m++;
-        }
-        i++;
-    }
-    while(p < sr){
-        pomoc[i] = tab[p];
-        p++;
-        i++;
-    }
-    while(m <= k){
-        pomoc[i] = tab[m];
-        m++;
-        i++;
-    }
+    int t[N]; //auxiliar array
 
-    for(int i = pocz; i<=kon; i++)tab[i] = pomoc[i-pocz];
+    int i = p; //left half iterator
+    int j = sr;//right half iterator
+    int aux = 0; //iterator of auxiliar array
+
+    int inv_count = 0;
+
+    while((i <= (sr-1)) && (j <= k)){
+        if(tab[i] <= tab[j]){
+            t[aux++] = tab[i++];
+        }else{
+            inv_count += (sr-i);
+            t[aux++] = tab[j++];
+        }
+    }
+    while(i <= (sr - 1)){
+        t[aux++] = tab[i++];
+    }
+    while(j <= k){
+        t[aux++] = tab[j++];
+    }
+    
+    for(int i = 0 ; i < N; i++) tab[p+i] = t[i];
+
+    return inv_count;
 }
 
-void merge_sort(int *tab, int p, int k){
-if(p-k==0)return;
-    
-    
+int merge_sort(int *tab, int p, int k){
+    int sr = (p+k)/2 + 1;
+    int inv_count = 0;
     if(p < k){
-       // for (int i =0;i<k;i++) cout<<tab[i]<<" ";
-        int m = (p+k)/2;
-        merge_sort(tab, p, m);
-        merge_sort(tab, m+1, k);
-        merge(tab, p,m,k);
+        inv_count = merge_sort(tab, p, sr-1);
+        inv_count += merge_sort(tab, sr, k);
+        inv_count += merge(tab, p, sr, k);
     }
+    return inv_count;
 }
 
 int main(){
-    int tab[10] = {rand()%100,rand()%100,rand()%100,rand()%100,rand()%100,rand()%100,rand()%100,rand()%100,rand()%100,rand()%100};
-    for (int a : tab) cout<<a<<" ";
+    int a[10] = {rand()%10,rand()%10,rand()%10,rand()%10,rand()%10,rand()%10,rand()%10,rand()%10,rand()%10,rand()%10};
+    for(int b : a)cout<<b<<" ";
     cout<<endl;
-    merge_sort(tab, 0, 9);
-    for (int a : tab) cout<<a<<" ";
-    cout<<endl; 
-
-//     int tab[1] = {1};
-
-//     merge(tab, 0,0,0);
-
-//    for(int a : tab)cout<<a<<" ";
-
-   
-
-
+    cout<<merge_sort(a, 0, 9)<<endl;
+    for(int b : a)cout<<b<<" ";
+    cout<<endl;
 }
