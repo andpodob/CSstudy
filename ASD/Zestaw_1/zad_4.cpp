@@ -16,7 +16,7 @@ int merge(int* tab, int p, int sr, int k){
     int inv_count = 0;
 
     while((i <= (sr-1)) && (j <= k)){
-        if(tab[i] <= tab[j]){
+        if(tab[i] <= tab[j]){ 
             t[aux++] = tab[i++];
         }else{
             inv_count += (sr-i);

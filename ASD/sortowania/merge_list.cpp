@@ -96,51 +96,15 @@ node* merge_sort(node *start){
 
 
 int main(){
-    node* f = new node;
-    f->w = 86;
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);
-    add(f, rand() % 1000);   
-    print(f);
-
-    f = merge_sort(f);
-    
-    print(f);
+    node* first = new node;
+    first->next = NULL;
+    first->w = rand()%1000;
+    for(int i = 0; i < 1000000; i++){
+        add(first, rand()%1000);
+    }
+    auto start = chrono::high_resolution_clock::now();
+    first = merge_sort(first);
+    auto finish = chrono::high_resolution_clock::now();
+    chrono::duration<double> elapsed = finish - start;
+    cout<<"Elapsed time: "<<elapsed.count() << endl;
 }
