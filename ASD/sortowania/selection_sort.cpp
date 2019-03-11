@@ -66,20 +66,16 @@ void print(node* start){
 }
 
 int main(){
-    node* f = new node;
-    f->w = rand() % 100;
-    add(f, rand() % 100);
-    add(f, rand() % 100);
-    add(f, rand() % 100);
-    add(f, rand() % 100);
-    add(f, rand() % 100);
-    add(f, rand() % 100);
-    add(f, rand() % 100);
-    add(f, rand() % 100);
-    add(f, rand() % 100);
-
-    print(f);
-    cout<<"Selection sort: "<<endl;
-    f = selection_sort(f);
-    print(f);
+    node* first = new node;
+    first->next = NULL;
+    first->w = rand()%1000;
+    for(int i = 0; i < 100000; i++){
+        add(first, rand()%1000);
+    }
+    cout<<"start: "<<endl;
+    auto start = chrono::high_resolution_clock::now();
+    first = selection_sort(first);
+    auto finish = chrono::high_resolution_clock::now();
+    chrono::duration<double> elapsed = finish - start;
+    cout<<"Elapsed time: "<<elapsed.count() << endl;
 }

@@ -89,9 +89,10 @@ int main(){
     node* first = new node;
     first->next = NULL;
     first->key = rand()%1000;
-    for(int i = 0; i < 10000; i++){
+    for(int i = 0; i < 100000; i++){
         add(first, rand()%1000);
     }
+    cout<<"start: "<<endl;
     auto start = chrono::high_resolution_clock::now();
     first = merge_sort(first);
     auto finish = chrono::high_resolution_clock::now();
