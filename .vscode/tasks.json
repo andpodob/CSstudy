@@ -6,14 +6,19 @@
         {
             "label": "echo",
             "type": "shell",
-            // "command": "g++ -g ${file}; .\\a.exe",
             "command": "g++ ${file}; .\\a.exe",
-            // "args": [
-            //     "-g", "${file}"
-            // ],
             "group": {
                 "kind": "build",
                 "isDefault": true
+            }
+        },
+        {
+            "label": "debug",
+            "type": "shell",
+            "command": "g++ -g ${file};",
+            "group": {
+                "kind": "build",
+                "isDefault": false
             }
         }
     ]
