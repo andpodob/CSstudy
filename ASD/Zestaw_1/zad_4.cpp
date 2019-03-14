@@ -8,7 +8,7 @@ int merge_sort(int*, int, int);
 int merge(int* tab, int p, int sr, int k){
     int N = k-p+1;
     int t[N]; //auxiliar array
-
+    xd xd
     int i = p; //left half iterator
     int j = sr;//right half iterator
     int aux = 0; //iterator of auxiliar array
