@@ -87,9 +87,15 @@ int main(){
     node* first = new node, *second;
     first->next = nullptr;
     first->w = 40;
-    for(int i = 0; i < 10; i++) add(first, rand()%100);
-    print(first);
+    for(int i = 0; i < 100000000; i++) add(first, rand()%100);
+    // print(first);
+    // first = quick_sort(first);
+    // print(first);
+
+    cout<<"start: "<<endl;
+    auto start = chrono::high_resolution_clock::now();
     first = quick_sort(first);
-    print(first);
-    
+    auto finish = chrono::high_resolution_clock::now();
+    chrono::duration<double> elapsed = finish - start;
+    cout<<"Elapsed time: "<<elapsed.count() << endl;
 }

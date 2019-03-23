@@ -69,7 +69,7 @@ int main(){
     node* first = new node;
     first->next = NULL;
     first->w = rand()%1000;
-    for(int i = 0; i < 100000; i++){
+    for(int i = 0; i < 10000000; i++){
         add(first, rand()%1000);
     }
     cout<<"start: "<<endl;

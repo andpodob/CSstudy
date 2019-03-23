@@ -20,7 +20,7 @@ void build_heap(int *tab){
     for(int i = tab[0]; i >= 1; i--){
         heapify(tab, i);
     }
-}
+}   
 
 void heapify(int* tab, int i){
     int largest,swap;
