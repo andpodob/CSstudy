@@ -151,32 +151,51 @@ void inorderTreeWalk(node *tree)
     }
 }
 
+void leftRotate(node *&tree, node *x){
+    node* y = x->r;
+    if(y != NULL){
+        if(x->p == NULL) tree = y;
+        else {
+            y->p = x->p;
+            if(x->p->l == x)x->p->l=y;
+            else x->p->r = y;
+        }
+        x->p = y;
+        x->r = y->l;
+        y->l = x;
+    }else return;
+}
+
+void preOrderTreeWalk(node *tree){
+    if (tree != NULL)
+    {
+        cout << tree->key << " ";
+        preOrderTreeWalk(tree->l);
+        preOrderTreeWalk(tree->r);
+    }
+}
+
 int main()
 {
     node *tree = NULL;
-    node *n1 = new node(8);
-    node *n2 = new node(9);
-    node *n3 = new node(6);
+    node *n1 = new node(2);
+    node *n2 = new node(1);
+    node *n3 = new node(3);
 
-    insert(tree, new node(10));
-    insert(tree, new node(5));
-    insert(tree, new node(7));
     insert(tree, n1);
-    insert(tree, n3);
     insert(tree, n2);
-    cout << endl;
-    inorderTreeWalk(tree);
-    cout << endl;
-    // cout<<"Succ of "<<n1->key<<" is "<<treeSuccessor(n1)->key<<endl;
-    // cout<<"Succ of "<<n2->key<<" is "<<treeSuccessor(n2)->key<<endl;
-    // cout<<"Succ of "<<n3->key<<" is "<<treeSuccessor(n3)->key<<endl;
-    remove(tree, n1);
-    inorderTreeWalk(tree);
+    insert(tree, n3);
+    
+    preOrderTreeWalk(tree);
+
+    for(int i = 0; i < 3; i++){
+        insert(tree, new node(rand()%20+1));
+    }
     cout<<endl;
-    remove(tree, n2);
-    inorderTreeWalk(tree);
+    preOrderTreeWalk(tree);
+
+    leftRotate(tree, n3);
+
     cout<<endl;
-    remove(tree, n3);
-    inorderTreeWalk(tree);
-    cout<<endl;
+    preOrderTreeWalk(tree);
 }
