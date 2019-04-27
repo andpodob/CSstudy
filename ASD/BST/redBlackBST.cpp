@@ -160,12 +160,13 @@ void preOrderTreeWalk(node* tree){
 
 int main(){
     node* tree = NULL;
+    int temp = 0;
 
-
-    for(int i = 0; i < 40; i++){
-        rbInsert(tree, new node(rand()%1000+1));
+    while(true){
+        cin>>temp;
+        rbInsert(tree, new node(temp));
+        preOrderTreeWalk(tree);
+        cout<<endl;
     }
-
-    preOrderTreeWalk(tree);
 
 }
