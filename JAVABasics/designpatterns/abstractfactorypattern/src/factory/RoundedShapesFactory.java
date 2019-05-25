@@ -6,7 +6,7 @@ import Shapes.Shape;
 
 public class RoundedShapesFactory extends AbstractFactory {
     @Override
-    Shape getShape(String shape) {
+    public Shape getShape(String shape) {
         if(shape.equalsIgnoreCase("RECT")){
             return new RoundedRectangle();
         }else if(shape.equalsIgnoreCase("SQUARE")){
