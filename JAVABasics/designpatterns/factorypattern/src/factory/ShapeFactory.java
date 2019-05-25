@@ -6,22 +6,18 @@ import shapes.Shape;
 import shapes.Square;
 
 public class ShapeFactory {
-    public Shape getShape(String shapeType){
+    public Shape getShape(String shape){
         Shape toRet = null;
-        if(shapeType == null){
-            return null;
-        }else{
-            switch (shapeType){
-                case "CIRCLE":
-                    toRet = new Circle();
-                    break;
-                case "SQUARE":
-                    toRet = new Square();
-                    break;
-                case "RECT":
-                    toRet = new Rectangle();
-                    break;
-            }
+        switch (shape){
+            case "RECT":
+                toRet = new Rectangle();
+                break;
+            case "SQUARE":
+                toRet = new Square();
+                break;
+            case "CIRCLE":
+                toRet = new Circle();
+                break;
         }
         return toRet;
     }

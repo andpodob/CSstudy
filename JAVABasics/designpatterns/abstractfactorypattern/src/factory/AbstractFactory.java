@@ -1,4 +1,7 @@
 package factory;
 
-public @interface AbstractFactory {
+import Shapes.Shape;
+
+public abstract class AbstractFactory {
+    abstract Shape getShape(String shape);
 }
