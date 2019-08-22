@@ -2,6 +2,10 @@
 
 using namespace std;
 
+/*
+    Strongly connected components in directed graph.
+ */
+
 enum color{
     WHITE, GREY, BLACK
 };

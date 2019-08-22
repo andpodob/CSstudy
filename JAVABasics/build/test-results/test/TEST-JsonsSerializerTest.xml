@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JsonsSerializerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-07-06T13:42:10" hostname="LAPTOP-FDQ37AOL" time="0.001">
+  <properties/>
+  <testcase name="testSerialization" classname="JsonsSerializerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

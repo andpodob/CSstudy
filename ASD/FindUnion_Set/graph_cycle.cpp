@@ -19,6 +19,7 @@ struct findUnionSet{
         b = find(b);
         parent[a] += parent[b];
         parent[b] = a;
+        
     }
 };
 
