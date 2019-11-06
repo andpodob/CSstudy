@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const int MAX = 9;
+const int MAX = 5;
 
 void fillTable(int t[MAX][MAX]){
     //zaczynamy w sorku

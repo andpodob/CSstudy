@@ -54,13 +54,7 @@ int minTime(vector<vector<int>> roads, vector<int> machines, int n) {
 
     vector<int> leafs = bfs(adj, parent, weight);
     pair<int, int> m;
-    // for(int i = 0; i < leafs.size(); i++){
-    //     while (color[leafs[i]]!=1 && parent[leafs[i]] != -1)
-    //     {
-    //         leafs[i] = parent[leafs[i]];
-    //     }
-        
-    // }
+
     for(int i = 0; i < leafs.size(); i++){
         v = leafs[i];
         while(color[v] !=1 && parent[v] != -1){
