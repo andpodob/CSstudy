@@ -62,7 +62,7 @@ bool checkDiagonal(bool plansza[SIZE][SIZE], int k){
     return false;
 }
 
-
+//jezeli dwa się przecianają to zwracamy true, jezeli zadne dwa sie nie przecinaja zwracamy flase
 bool check(dane d){
     bool plansza[SIZE][SIZE];
     for(int i = 0; i < SIZE; i++){
@@ -77,7 +77,12 @@ bool check(dane d){
         plansza[x][y] = true;
     }
 
-
+    for(int i = 0; i < SIZE; i++){
+        if(checkColumn(plansza, i)) return true;
+        if(checkRow(plansza, i)) return true;
+        if(checkDiagonal(plansza, i)) return true;
+    }
+    return false;
 }
 
 int main(){
