@@ -16,7 +16,11 @@ bool fib(int a, int b){
         cout<<c<<" ";
     }
     cout<<endl;
-    return (c == rok);
+    if(c == rok){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 void findStartingPoints(){
@@ -32,8 +36,10 @@ void findStartingPoints(){
             b-=1; 
         }
         n++;
-    }
+    }    
 }
+
+
 
 void pairs(int n){
     int a = 1, b = n-1;

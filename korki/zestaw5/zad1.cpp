@@ -63,7 +63,7 @@ ulamek odejmowanie(ulamek u1, ulamek u2){
 
 ulamek dzielenie(ulamek u1, ulamek u2){
     ulamek wynik;
-
+    
     wynik.l = u1.l * u2.m;
     wynik.l = u1.m * u2.l; 
 
