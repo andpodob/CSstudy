@@ -33,4 +33,6 @@ int main(){
     cout<<lastNonZeroDigit(6)<<endl;
     cout<<lastNonZeroDigit(10)<<endl;
     cout<<lastNonZeroDigit(100)<<endl;
+    cout<<lastNonZeroDigit(150)<<endl;
+    cout<<lastNonZeroDigit(89)<<endl;
 }
