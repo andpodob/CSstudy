@@ -10,7 +10,7 @@ void swap(int *a, int *b){
 
 void reverseTab(int* tab, int len){
     for(int i = 0; i < len/2; i++){
-        swap(tab+i,tab+(len-i-1));
+        swap(tab+i, tab + ( len - i- 1 ));
     }
 }
 
@@ -23,44 +23,57 @@ void jakasOperacja(int *a, int *b, int *c){
 }
 
 int main(){
-    // operator *-wyluskania i &-pobranie adresu
-    int a = 8; // <- rezerwujemy 4 bajty i wpisujemy w nie wartosc 8
-    int* adres8 = &a; //<- mozemy pobrac adres tych 4 bajtow
-    cout<<"Wartosc w zmiennej a: "<<a<<endl;
-    cout<<"Adres naszej osemki: "<<adres8<<endl;
-    cout<<"Wartosc pod tym adresem: "<<*adres8<<endl;
-    //majac adres pola w ktorym znajduje sie 8, bez tykania zmiennej 'a', mozemy zmienic dane zamisane 
-    //na tym obszarze pamieci
-    *adres8 = 5;
-    cout<<"Wartosc pod tym adresem: "<<*adres8<<endl;
-    //co ciekawe jako ze na dokladnie tym samym obszarze operuje zmienna a, jej wartosc tez sie zmienila
-    cout<<"Wartosc w zmiennej a: "<<a<<endl;
-    //dziala to tez w druga strone
-    a = 3;
-    cout<<"Wartosc pod tym adresem: "<<*adres8<<endl;
-    cout<<"Wartosc w zmiennej a: "<<a<<endl;
+    int a = 9;
+    int b = 9;
+    int c = 8;
+    cout<<&a<<endl;
+    cout<<&b<<endl;
+    cout<<&c<<endl;
+    
+    int* adres_a = &a;
+    adres_a++;
+    *adres_a= 115;
 
-    a = 3;
-    int b = 4;
-    int c = 1;
-    cout<<"a: "<<a<<endl;
-    cout<<"b: "<<b<<endl;
-    cout<<"c: "<<c<<endl;
-    jakasOperacja(&a,&b,&c);
-    cout<<"a: "<<a<<endl;
-    cout<<"b: "<<b<<endl;
-    cout<<"c: "<<c<<endl;
+    cout<<b<<endl;
+    // // operator *-wyluskania i &-pobranie adresu
+    // int a = 8; // <- rezerwujemy 4 bajty i wpisujemy w nie wartosc 8
+    // int* adres8 = &a; //<- mozemy pobrac adres tych 4 bajtow
+    // cout<<"Wartosc w zmiennej a: "<<a<<endl;
+    // cout<<"Adres naszej osemki: "<<adres8<<endl;
+    // cout<<"Wartosc pod tym adresem: "<<*adres8<<endl;
+    // //majac adres pola w ktorym znajduje sie 8, bez tykania zmiennej 'a', mozemy zmienic dane zamisane 
+    // //na tym obszarze pamieci
+    // *adres8 = 5;
+    // cout<<"Wartosc pod tym adresem: "<<*adres8<<endl;
+    // //co ciekawe jako ze na dokladnie tym samym obszarze operuje zmienna a, jej wartosc tez sie zmienila
+    // cout<<"Wartosc w zmiennej a: "<<a<<endl;
+    // //dziala to tez w druga strone
+    // a = 3;
+    // cout<<"Wartosc pod tym adresem: "<<*adres8<<endl;
+    // cout<<"Wartosc w zmiennej a: "<<a<<endl;
 
-    int tab[] = {1,2,3,4,5,6,7};
-    int len = 7;
+    // a = 3;
+    // int b = 4;
+    // int c = 1;
+    // cout<<"a: "<<a<<endl;
+    // cout<<"b: "<<b<<endl;
+    // cout<<"c: "<<c<<endl;
+    // jakasOperacja(&a,&b,&c);
+    // cout<<"a: "<<a<<endl;
+    // cout<<"b: "<<b<<endl;
+    // cout<<"c: "<<c<<endl;
 
-    for(int i = 0; i<len; i++){
-        cout<<tab[i]<<" "; 
-    }
-    cout<<endl;
-    reverseTab(tab, len);
-    for(int i = 0; i<len; i++){
-        cout<<tab[i]<<" "; 
-    }
-    cout<<endl;
+    // int tab[] = {1,2,3,4,5,6,7};
+    // int len = 7;
+
+    // for(int i = 0; i<len; i++){
+    //     cout<<tab[i]<<" "; 
+    // }
+    // cout<<endl;
+
+    // reverseTab(tab, len);
+    // for(int i = 0; i<len; i++){
+    //     cout<<tab[i]<<" "; 
+    // }
+    // cout<<endl;
 }

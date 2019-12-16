@@ -17,6 +17,11 @@ void addInFront(Node** list, Node* element){
     *list = element;
 }
 
+void addInFront(Node*& list, Node* element){
+    element->next = list;
+    list = element;
+}
+
 void printList(Node* begin){
     while(begin != NULL){
         cout<<begin->val<<" ";
@@ -35,6 +40,7 @@ int main(){
     Node *list = NULL;
     printList(list);
     addInFront(&list, new Node(4));
+    addInFront(list, new Node(4));
     printList(list);
     addInFront(&list, new Node(4));
     addInFront(&list, new Node(2));
