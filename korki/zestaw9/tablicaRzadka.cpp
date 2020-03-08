@@ -65,18 +65,20 @@ int main(){
     Node* tab;
     init(tab);
 
+    //int t[20000000];
+
     setElement(tab, 0, 15);
-    setElement(tab, 1000000, 16);
+    setElement(tab, 20000000, 16); // tab[1000000] = 16
 
     printList(tab);
 
-    setElement(tab, 1000000, 25);
+    setElement(tab, 1000000, 25); //tab[1000000] =  25
 
     printList(tab);
 
-    setElement(tab, 1000, 13);
+    setElement(tab, 1000, 13); //tab[1000] = 13
 
     printList(tab);
 
-    cout<<"1000 : "<<value(tab, 1000)<<endl;
+    cout<<"1000 : "<<value(tab, 1000)<<endl; //cout<<tab[1000]
 }
